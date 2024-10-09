@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    {% extends 'base.html' %}
+    {% load static %}
+
+        {%block content%}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+        .about-section {
+            background-image: url('../static/images/About.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 1;
+        }
+        .about-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: auto;
+        }
+        .about-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+        <div class="about-section">
+            <div class="about-content">
+                <div class="m-4 m-lg-5">
+                    <h2 class="display-5 fw-bold">Get Set Go!!</h2>
+                    <p class="fs-4">Our mission is to make it easier for everyone to play sports and increase the utilisation of facilities.</p>
+                    <hr style="border: 1px solid black">
+                </div>
+
+           
+            <!-- Page Content-->
+            <section class="pt-4">
+               
+
+                    <!--Page Feature-->
+                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i class="bi bi-journal-check"></i></div>
+                                <h2 class="fs-4 fw-bold">Advance reservation and online booking</h2>
+                                <p class="mb-0">book your turfs in advance by using our website</p>
+                                <hr style="border: 1px solid black">
+                            </div>
+
+                            
+                    </div>
+
+
+    
+            </div>
+        </div>
+    
+    </body>
+    </html>
+    {% endblock %}

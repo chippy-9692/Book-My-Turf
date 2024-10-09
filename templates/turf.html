@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block title%}
+Turfs
+{% endblock %}
+
+        {%block content%}
+<h2 class="text-center">Turfs</h2>
+<div class="container">
+         {% for i  in tur %}
+        <div class="card text-center" style="width: 20rem; display:inline-block;margin: 20px;">
+                <img src="{{i.img.url}}" class="card-img-top" alt="..." height="150px" width="200px">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.name}}</h5>
+                  <h5 class="card-title">{{i.location}}</h5>
+                  <p class="card-text">{{i.description}}</p>
+                  <h5 class="card-title">{{i.time}}</h5>
+                  <h5 class="card-title">{{i.perhour}}</h5>
+           
+                </div>
+              </div>
+              {% endfor %}
+              </div>
+
+{% endblock %}

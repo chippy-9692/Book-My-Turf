@@ -1,0 +1,64 @@
+{% load static %}
+<html>
+    <head>
+        <title>{% block title %}
+            {% endblock %}
+        </title>
+        <!--CDN-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    
+    </head>
+    
+  
+        <!--navbar start-->
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" style="font-size:20px; font-style:Italic;"></a>
+                </div>
+            </div>
+            <ul class="nav navbar-nav mx-auto ">
+<style>
+  .nav li a{
+    color: rgb(244, 23, 200);
+    font-size: 15px;
+  }
+  .navbar-brand{
+    color: rgb(244, 23, 200);
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+</style>
+</head>
+<body>
+    <!-- navbar start -->
+    
+    <ul class="nav navbar-nav mx-auto ">
+      <li class="active"><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+      {% if user.is_authenticated %}
+      <li><a href="{% url 'turf' %}">Turfs</a></li>
+      <li><a href="{% url 'check_availability' %}">Booking</a></li>
+      <li><a href="{% url 'contactus' %}">Contact</a></li>
+      <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> LogOut</a></li>
+    </ul>
+    <h3>{{user.username}}</h3>
+    {% else %}
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    {% endif %}
+    </ul>
+  </div>
+</nav>
+
+{%block content%}
+
+{% endblock %}
+
+</body>
+</html>
